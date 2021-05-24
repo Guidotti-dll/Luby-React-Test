@@ -21,8 +21,8 @@ const NavBar = () => {
       <Page
         here={pathname === '/home'}
         onClick={() => {
-          push('/home');
           handleClearSelectedUser();
+          push('/home');
         }}
       >
         <BiHomeAlt size={25} />
@@ -31,8 +31,8 @@ const NavBar = () => {
       <Page
         here={pathname === '/repositories'}
         onClick={() => {
-          push('/repositories');
           handleClearSelectedUser();
+          push('/repositories');
         }}
       >
         <FiGithub size={25}  />
@@ -41,8 +41,8 @@ const NavBar = () => {
       <Page
         here={pathname === '/followers'}
         onClick={() => {
-          push('/followers');
           handleClearSelectedUser();
+          push('/followers');
         }}
       >
         <BsPeople size={25} />
@@ -51,8 +51,8 @@ const NavBar = () => {
       <Page
         here={pathname === '/following'}
         onClick={() => {
-          push('/following');
           handleClearSelectedUser();
+          push('/following');
         }}
       >
         <BsPeople size={25} />
