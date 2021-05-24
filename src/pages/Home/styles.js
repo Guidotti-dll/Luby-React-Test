@@ -20,17 +20,26 @@ export const Header = styled.header`
 
     nav{
       width: 90%;
-      display: flex;
-      justify-content: space-between;
+      display: grid;
+      grid-template-areas: 'arrow name button';
       font-size: 17px;
       line-height: 24px;
 
+      .goBack{
+        grid-area: arrow;
+        justify-self: flex-start;
+      }
+
       div{
+        grid-area: name;
+        justify-self: flex-end;
         display: flex;
         align-items: center;
         font-weight: bold;
       }
       button{
+        grid-area: button;
+        justify-self: flex-end;
         color: ${colors.white};
         font-size: 17px;
         line-height: 24px;
@@ -42,6 +51,12 @@ export const Header = styled.header`
           margin-left: 12px;
         }
       }
+    }
+    .twoItems{
+        grid-template-areas: 'name button';
+        div{
+          justify-self: flex-start;
+        }
     }
 `;
 

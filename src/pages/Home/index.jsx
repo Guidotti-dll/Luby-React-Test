@@ -34,9 +34,9 @@ const Home = () => {
     <>
       <Container>
       <Header>
-      <nav>
+      <nav className={selectedUser ? '' : 'twoItems'} >
         {selectedUser &&(
-          <FiArrowLeft size={22} onClick={() => handleGoBack()} />
+          <FiArrowLeft className="goBack" size={22} onClick={() => handleGoBack()} />
         )}
         <div>
           #{selectedUser ? selectedUser.login : user.login}
