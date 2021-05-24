@@ -28,7 +28,7 @@ const Login = () => {
       setIsLoading(true);
       await api.get(`users/${values.userName}`)
       .then(({data}) => {
-        setUser({
+        const tempUser = {
           login : data.login,
           name : data.name,
           email : data.email,
@@ -45,7 +45,10 @@ const Login = () => {
           public_gists : data.public_gists,
           followers : data.followers,
           following : data.following,
-        });
+        }
+
+        setUser(tempUser);
+        localStorage.setItem('userStorage', JSON.stringify(tempUser));
         setIsLoading(false);
         push('/home');
 

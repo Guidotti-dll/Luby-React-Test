@@ -36,7 +36,7 @@ const Followers = () => {
     setIsLoading(true);
     await axios.get(`${followUrl}`)
       .then(({data}) => {
-        setSelectedUser({
+        const tempUser = {
           login : data.login,
           name : data.name,
           email : data.email,
@@ -53,7 +53,9 @@ const Followers = () => {
           public_gists : data.public_gists,
           followers : data.followers,
           following : data.following,
-        });
+        }
+        setSelectedUser(tempUser);
+        localStorage.setItem('selectedUserStorage', JSON.stringify(tempUser));
         setIsLoading(false);
 
       }).catch((error) => {

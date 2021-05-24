@@ -1,13 +1,25 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Follow from './pages/Follow';
 import Repositories from './pages/Repositories';
 import { SelectedUserContext } from './context/SelectedUserContext';
+import { UserContext } from './context/UserContext';
 
  const Routes = () => {
-  const {selectedUser} = useContext(SelectedUserContext);
+  const {selectedUser, setSelectedUser} = useContext(SelectedUserContext);
+  const {user, setUser} = useContext(UserContext);
+
+  useEffect(() => {
+    if(!user){
+      setUser(JSON.parse(localStorage.getItem('userStorage')));
+    }
+
+    if(!selectedUser){
+      setSelectedUser(JSON.parse(localStorage.getItem('selectedUserStorage')));
+    }
+  })
 
   return(
     <BrowserRouter>
