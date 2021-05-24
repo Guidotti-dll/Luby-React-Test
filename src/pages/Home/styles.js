@@ -3,7 +3,7 @@ import { colors } from '../../constants/colors';
 import { ContainerLogin } from '../Login/styles';
 
 export const Container = styled(ContainerLogin)`
-  height: calc(100vh - 80px);
+  height: calc(100vh - 69px);
   justify-content: flex-start;
   color: ${colors.white};
   overflow-y: scroll;
