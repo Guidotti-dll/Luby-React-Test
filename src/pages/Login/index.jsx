@@ -9,9 +9,11 @@ import {FiArrowRight} from 'react-icons/fi'
 import { colors } from '../../constants/colors';
 import { UserContext } from '../../context/UserContext';
 import { useHistory } from 'react-router';
+import Loading from '../../components/Loading';
 
 const Login = () => {
   const [errors, setErrors] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
   const {setUser} = useContext(UserContext);
   const {push} = useHistory();
 
@@ -23,6 +25,7 @@ const Login = () => {
       userName: yup.string().required('Campo obrigatório'),
     }),
     onSubmit: async (values) => {
+      setIsLoading(true);
       await api.get(`users/${values.userName}`)
       .then(({data}) => {
         setUser({
@@ -43,10 +46,11 @@ const Login = () => {
           followers : data.followers,
           following : data.following,
         });
-
+        setIsLoading(false);
         push('/home');
 
       }).catch((error) => {
+        setIsLoading(false);
         console.log(error)
           setErrors('Usuário não encontrado')
       })
@@ -54,6 +58,7 @@ const Login = () => {
   });
   return(
     <ContainerLogin>
+      <Loading open={isLoading} />
       <AiOutlineGithub size={96} color={colors.yellow} />
       <Input>
         <input

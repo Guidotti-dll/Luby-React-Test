@@ -8,26 +8,32 @@ import { Container } from '../Home/styles';
 import { Follow } from './styles';
 import { useLocation } from 'react-router';
 import { SelectedUserContext } from '../../context/SelectedUserContext';
+import Loading from '../../components/Loading';
 
 const Followers = () => {
   const {user} = useContext(UserContext);
   const {setSelectedUser} = useContext(SelectedUserContext);
+  const [isLoading, setIsLoading] = useState(false);
   const [followers, setFollowers] = useState([]);
   const {pathname} = useLocation();
 
   useEffect(() => {
+    setIsLoading(true);
     const url = pathname === '/following' ? `https://api.github.com/users/${user.login}/following` : user.followers_url ;
 
     axios.get(`${url}`)
     .then(({data}) => {
       setFollowers(data);
+      setIsLoading(false);
     })
     .catch((errors) => {
       console.log(errors);
+      setIsLoading(false);
     })
   },[])
 
   const handleSelectUser = async (followUrl) => {
+    setIsLoading(true);
     await axios.get(`${followUrl}`)
       .then(({data}) => {
         setSelectedUser({
@@ -48,9 +54,10 @@ const Followers = () => {
           followers : data.followers,
           following : data.following,
         });
-
+        setIsLoading(false);
 
       }).catch((error) => {
+        setIsLoading(false);
         console.log(error)
       })
     }
@@ -58,6 +65,7 @@ const Followers = () => {
   return(
     <>
       <Container>
+      <Loading open={isLoading} />
         <TabNavigator />
         <ul style={{width: '100%'}}>
           {followers.map((follower) => (

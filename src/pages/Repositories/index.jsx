@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import {BiLockAlt,BiLockOpenAlt,BiStar} from 'react-icons/bi';
+import Loading from '../../components/Loading';
 import NavBar from '../../components/NavBar';
 import { TabNavigator } from '../../components/TabNavigator';
 import { colors } from '../../constants/colors';
@@ -11,20 +12,25 @@ import { Repo } from './styles';
 const Repositories = () => {
   const {user} = useContext(UserContext);
   const [repositories, setRepositories] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     axios.get(`${user.repos_url}`)
     .then(({data}) => {
       setRepositories(data);
+      setIsLoading(false);
     })
     .catch((errors) => {
       console.log(errors);
+      setIsLoading(false);
     })
   },[])
 
   return(
     <>
       <Container>
+        <Loading open={isLoading} />
         <TabNavigator />
         <ul style={{width: '100%'}}>
           {repositories.map((repository) => (
