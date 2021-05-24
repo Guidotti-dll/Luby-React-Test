@@ -30,7 +30,7 @@ const Followers = () => {
       console.log(errors);
       setIsLoading(false);
     })
-  },[])
+  },[pathname])
 
   const handleSelectUser = async (followUrl) => {
     setIsLoading(true);
