@@ -71,10 +71,10 @@ const Followers = () => {
         <TabNavigator />
         <ul style={{width: '100%'}}>
           {followers.map((follower) => (
-            <Follow key={follower.id}>
+            <Follow key={follower.id} onClick={() => handleSelectUser(follower.url)} >
             <img src={follower.avatar_url} alt="avatar"/>
             <p>#{follower.login}</p>
-            <FiArrowRight size={20} onClick={() => handleSelectUser(follower.url)} />
+            <FiArrowRight size={20} />
             </Follow>
           ))}
         </ul>
