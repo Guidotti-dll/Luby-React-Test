@@ -1,40 +1,54 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {Nav, Page} from './styled'
 import {BiHomeAlt} from 'react-icons/bi'
 import {FiGithub} from 'react-icons/fi'
 import {BsPeople} from 'react-icons/bs'
 import { useHistory, useLocation } from 'react-router';
+import { SelectedUserContext } from '../../context/SelectedUserContext';
 
 const NavBar = () => {
   const {pathname} = useLocation();
   const {push} = useHistory();
+  const {setSelectedUser} = useContext(SelectedUserContext);
 
   return(
     <Nav>
       <Page
         here={pathname === '/home'}
-        onClick={() => {push('/home')}}
+        onClick={() => {
+          push('/home');
+          setSelectedUser(false);
+        }}
       >
         <BiHomeAlt size={25} />
         <span>Home</span>
       </Page>
       <Page
         here={pathname === '/repositories'}
-        onClick={() => {push('/repositories')}}
+        onClick={() => {
+          push('/repositories');
+          setSelectedUser(false);
+        }}
       >
         <FiGithub size={25}  />
         <span>Repos</span>
       </Page>
       <Page
         here={pathname === '/followers'}
-        onClick={() => {push('/followers')}}
+        onClick={() => {
+          push('/followers');
+          setSelectedUser(false);
+        }}
       >
         <BsPeople size={25} />
         <span>Seguidores</span>
       </Page>
       <Page
         here={pathname === '/following'}
-        onClick={() => {push('/following')}}
+        onClick={() => {
+          push('/following');
+          setSelectedUser(false);
+        }}
       >
         <BsPeople size={25} />
         <span>Seguindo</span>

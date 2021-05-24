@@ -34,7 +34,7 @@ const Repositories = () => {
               <div className="status">
                 <div className="star">
                 <BiStar size={18} color={colors.yellow} />
-                {repository.stargazers_count}
+                <span>{repository.stargazers_count}</span>
                 </div>
                 <div className="lock" >
                 <BiLockOpenAlt size={18} color="#63BF1F" />
