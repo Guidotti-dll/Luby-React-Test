@@ -12,7 +12,6 @@ export const Repo = styled.div`
 
   h3{
     position: relative;
-    /* padding-top: 10px; */
     margin-bottom: 9px;
     height: 42px;
     font-size: 20px;
@@ -59,11 +58,9 @@ export const Repo = styled.div`
     .lock{
       display: flex;
       align-items: center;
+      justify-content: flex-end;
       height: 100%;
       width: 20%;
-      svg{
-        margin-right: 10px;
-      }
     }
   }
 `;

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
-import {BiLockAlt,BiLockOpenAlt,BiStar} from 'react-icons/bi';
+import {BiLockOpenAlt,BiStar} from 'react-icons/bi';
 import Loading from '../../components/Loading';
 import NavBar from '../../components/NavBar';
 import { TabNavigator } from '../../components/TabNavigator';
@@ -34,7 +34,7 @@ const Repositories = () => {
         <TabNavigator />
         <ul style={{width: '100%'}}>
           {repositories.map((repository) => (
-            <Repo key={repository.id}>
+            <Repo key={repository.id} onClick={() => {window.open(repository.html_url)}} >
               <h3>{repository.name}</h3>
               <p>{repository.description}</p>
               <div className="status">
@@ -44,7 +44,6 @@ const Repositories = () => {
                 </div>
                 <div className="lock" >
                 <BiLockOpenAlt size={18} color="#63BF1F" />
-                <BiLockAlt size={18}  color="#CC042A" />
                 </div>
               </div>
             </Repo>
