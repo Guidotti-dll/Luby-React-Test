@@ -11,13 +11,18 @@ const NavBar = () => {
   const {push} = useHistory();
   const {setSelectedUser} = useContext(SelectedUserContext);
 
+  function handleClearSelectedUser() {
+    localStorage.setItem('selectedUserStorage', JSON.stringify(false));
+    setSelectedUser(false);
+  }
+
   return(
     <Nav>
       <Page
         here={pathname === '/home'}
         onClick={() => {
           push('/home');
-          setSelectedUser(false);
+          handleClearSelectedUser();
         }}
       >
         <BiHomeAlt size={25} />
@@ -27,7 +32,7 @@ const NavBar = () => {
         here={pathname === '/repositories'}
         onClick={() => {
           push('/repositories');
-          setSelectedUser(false);
+          handleClearSelectedUser();
         }}
       >
         <FiGithub size={25}  />
@@ -37,7 +42,7 @@ const NavBar = () => {
         here={pathname === '/followers'}
         onClick={() => {
           push('/followers');
-          setSelectedUser(false);
+          handleClearSelectedUser();
         }}
       >
         <BsPeople size={25} />
@@ -47,7 +52,7 @@ const NavBar = () => {
         here={pathname === '/following'}
         onClick={() => {
           push('/following');
-          setSelectedUser(false);
+          handleClearSelectedUser();
         }}
       >
         <BsPeople size={25} />
