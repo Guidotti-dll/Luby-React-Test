@@ -12,6 +12,7 @@ export const ContainerLogin = styled.div`
 `;
 
 export const Input = styled.div`
+  position: relative;
   margin: 48px 0 19px 0;
   width: 90%;
   height: 56px;
@@ -26,15 +27,17 @@ export const Input = styled.div`
     height: 100%;
     border: none;
     border-radius: 12px;
-    width: 60%;
+    width: 100%;
     outline-style: none;
-    padding: 20px 16px;
+    padding: 20px 45% 20px 16px;
     font-size: 20px;
     line-height: 24px;
     color: ${colors.mediumGray};
   }
 
   .error{
+    position: absolute;
+    right: 0;
     width: 40%;
     color: ${colors.red};
     font-size: 14px;
