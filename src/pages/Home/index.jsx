@@ -46,7 +46,7 @@ const Home = () => {
         <Avatar src={selectedUser ? selectedUser.avatar_url : user.avatar_url} />
       </Header>
       <About>
-        <h3>{selectedUser ? selectedUser.name : user.name}</h3>
+        <h3>{selectedUser ? selectedUser.name.toUpperCase() : user.name.toUpperCase()}</h3>
         <p>{selectedUser ? selectedUser.email : user.email}</p>
         <p>{selectedUser ? selectedUser.location : user.location}</p>
       </About>
