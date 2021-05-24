@@ -4,7 +4,7 @@ import { colors } from '../../constants/colors';
 export const Follow = styled.div`
   position: relative;
   width: 100%;
-  padding-top: 0 18px;;
+  padding-top: 0 18px;
   height: 108px;
   display: flex;
   justify-content: space-around;
