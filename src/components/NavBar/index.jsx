@@ -12,7 +12,6 @@ const NavBar = () => {
   const {setSelectedUser} = useContext(SelectedUserContext);
 
   function handleClearSelectedUser() {
-    localStorage.setItem('selectedUserStorage', JSON.stringify(false));
     setSelectedUser(false);
   }
 

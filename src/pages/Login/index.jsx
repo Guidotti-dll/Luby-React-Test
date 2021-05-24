@@ -48,7 +48,6 @@ const Login = () => {
         }
 
         setUser(tempUser);
-        localStorage.setItem('userStorage', JSON.stringify(tempUser));
         setIsLoading(false);
         push('/home');
 

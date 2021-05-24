@@ -18,15 +18,12 @@ const Home = () => {
   }
 
   const handleGoBack = () => {
-    setSelectedUser(false)
-    localStorage.setItem('selectedUserStorage', JSON.stringify(false));
+    setSelectedUser(false);
   }
 
   const Save = () => {
     setSelectedUser(false)
     setUser(selectedUser);
-    localStorage.setItem('userStorage', JSON.stringify(selectedUser));
-    localStorage.setItem('selectedUserStorage', JSON.stringify(false));
     push('/home');
   }
 

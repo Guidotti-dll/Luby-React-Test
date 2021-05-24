@@ -55,7 +55,6 @@ const Followers = () => {
           following : data.following,
         }
         setSelectedUser(tempUser);
-        localStorage.setItem('selectedUserStorage', JSON.stringify(tempUser));
         setIsLoading(false);
 
       }).catch((error) => {
