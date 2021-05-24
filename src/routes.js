@@ -6,6 +6,7 @@ import Follow from './pages/Follow';
 import Repositories from './pages/Repositories';
 import { SelectedUserContext } from './context/SelectedUserContext';
 import { UserContext } from './context/UserContext';
+import PrivateRoute from './components/Privateroute';
 
  const Routes = () => {
   const {selectedUser, setSelectedUser} = useContext(SelectedUserContext);
@@ -25,10 +26,10 @@ import { UserContext } from './context/UserContext';
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Login} />
-        <Route path="/home"  component={Home} />
-        <Route path="/following"  component={selectedUser ? Home : Follow} />
-        <Route path="/followers"  component={selectedUser ? Home : Follow} />
-        <Route path="/repositories"  component={Repositories} />
+        <PrivateRoute path="/home"  component={Home} />
+        <PrivateRoute path="/following"  component={selectedUser ? Home : Follow} />
+        <PrivateRoute path="/followers"  component={selectedUser ? Home : Follow} />
+        <PrivateRoute path="/repositories"  component={Repositories} />
       </Switch>
     </BrowserRouter>
   )
