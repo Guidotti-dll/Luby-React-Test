@@ -17,6 +17,7 @@ const Followers = () => {
   const [followers, setFollowers] = useState([]);
   const {pathname} = useLocation();
 
+  console.log(pathname);
   useEffect(() => {
     setIsLoading(true);
     const url = pathname === '/following' ? `https://api.github.com/users/${user.login}/following` : user.followers_url ;
