@@ -3,10 +3,11 @@ import { colors } from '../../constants/colors';
 import { ContainerLogin } from '../Login/styles';
 
 export const Container = styled(ContainerLogin)`
-  height: calc(100vh - 69px);
+  height: 100vh;
   justify-content: flex-start;
   color: ${colors.white};
-  overflow-y: scroll;
+  overflow-y: auto;
+  padding-bottom: 80px;
 
   .notFound{
     width: 100%;
