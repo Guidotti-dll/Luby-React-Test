@@ -46,9 +46,9 @@ const Home = () => {
         <Avatar src={selectedUser ? selectedUser.avatar_url : user.avatar_url} />
       </Header>
       <About>
-        <h3>{selectedUser ? selectedUser.name ? selectedUser.name.toUpperCase() : '' : user.name ? user.name.toUpperCase() : ''}</h3>
-        <p>{selectedUser ? selectedUser.email : user.email}</p>
-        <p>{selectedUser ? selectedUser.location : user.location}</p>
+        <h3>{selectedUser ? selectedUser.name ? selectedUser.name.toUpperCase() : 'Sem nome'.toUpperCase() : user.name ? user.name.toUpperCase() : 'Sem nome'.toUpperCase()}</h3>
+        <p>{selectedUser ? selectedUser.email ? selectedUser.email : "Email privado" : user.email ? user.email : "Email privado" }</p>
+        <p>{selectedUser ? selectedUser.location ? selectedUser.location : "Sem localização" : user.location ? user.location : "Sem localização" }</p>
       </About>
       <Infos>
         <div onClick={() => {!selectedUser ? push('/followers') : null }} >
@@ -67,6 +67,7 @@ const Home = () => {
       <Bio>
         <h3>Bio</h3>
         <p>{selectedUser ? selectedUser.bio : user.bio}</p>
+        <p>{selectedUser ? selectedUser.bio ? selectedUser.bio : "Não possui bio!" : user.bio ? user.bio : "Não possui bio!" }</p>
       </Bio>
     </Container>
       <NavBar />

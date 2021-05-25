@@ -116,6 +116,10 @@ h3{
     background: ${colors.yellow};
     }
   }
+
+  p{
+    margin-top: 5px;
+  }
 `
 
 export const Bio = styled.div`
