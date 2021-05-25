@@ -72,6 +72,7 @@ export const Infos = styled.div`
   margin-top: 44px;
 
   div{
+    width: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;

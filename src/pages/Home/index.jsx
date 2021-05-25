@@ -51,15 +51,15 @@ const Home = () => {
         <p>{selectedUser ? selectedUser.location : user.location}</p>
       </About>
       <Infos>
-        <div>
+        <div onClick={() => {!selectedUser ? push('/followers') : null }} >
           <h2>{selectedUser ? selectedUser.followers : user.followers}</h2>
           <span>Seguidores</span>
         </div>
-        <div>
+        <div onClick={() => {!selectedUser ? push('/following') : null }} >
           <h2>{selectedUser ? selectedUser.following : user.following}</h2>
           <span>Seguindo</span>
         </div>
-        <div>
+        <div onClick={() => {!selectedUser ? push('/repositories') : null }} >
           <h2>{selectedUser ? selectedUser.public_repos : user.public_repos}</h2>
           <span>Repos</span>
         </div>
