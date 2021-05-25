@@ -7,6 +7,13 @@ export const Container = styled(ContainerLogin)`
   justify-content: flex-start;
   color: ${colors.white};
   overflow-y: scroll;
+
+  .notFound{
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export const Header = styled.header`

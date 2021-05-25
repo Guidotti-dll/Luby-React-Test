@@ -49,6 +49,9 @@ const Repositories = () => {
             </Repo>
           ))}
         </ul>
+        {user.public_repos === 0 &&(
+            <p className="notFound">Você não possui repositórios!</p>
+          )}
       </Container>
       <NavBar />
     </>

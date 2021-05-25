@@ -52,7 +52,7 @@ export const Repo = styled.div`
         margin-left: 5px;
         font-size: 15px;
         line-height: 18px;
-        margin-top: 4px;
+        padding-top: 3px;
       }
     }
 

@@ -68,6 +68,12 @@ const Followers = () => {
       <Container>
       <Loading open={isLoading} />
         <TabNavigator />
+        {user.following === 0 && pathname === '/following' &&(
+            <p className="notFound">Você não esta seguindo ninguém!</p>
+          )}
+        {user.followers === 0 && pathname === '/followers' &&(
+            <p className="notFound">Você não possui seguidores!</p>
+          )}
         <ul style={{width: '100%'}}>
           {followers.map((follower) => (
             <Follow key={follower.id} onClick={() => handleSelectUser(follower.url)} >
