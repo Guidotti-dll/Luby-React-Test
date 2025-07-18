@@ -1,14 +1,18 @@
-import styled from 'styled-components';
-import { colors } from '../../constants/colors'
+import styled from "styled-components";
+import { colors } from "../../constants/colors";
 
 export const ContainerLogin = styled.div`
-  background: ${colors.lightnessGray} ;
+  background: ${colors.lightnessGray};
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  .svg-icon:hover {
+    animation: rotateIn 1s;
+  }
 `;
 
 export const Input = styled.div`
@@ -23,7 +27,7 @@ export const Input = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  input{
+  input {
     height: 100%;
     border: none;
     border-radius: 12px;
@@ -35,7 +39,7 @@ export const Input = styled.div`
     color: ${colors.mediumGray};
   }
 
-  .error{
+  .error {
     position: absolute;
     right: 0;
     width: 40%;
@@ -65,7 +69,7 @@ export const Button = styled.button`
     font-weight: bold;
   }
 
-  svg{
+  svg {
     margin-left: 5px;
   }
 `;
