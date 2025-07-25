@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { FiLogOut, FiArrowLeft } from "react-icons/fi";
 import { useHistory } from "react-router";
 import NavBar from "../../components/NavBar";
 import { SelectedUserContext } from "../../context/SelectedUserContext";
 import { UserContext } from "../../context/UserContext";
 import { Avatar, Container, Header, Infos, Bio, About } from "./styles";
+import { animate } from "animejs";
 
 const Home = () => {
   const { user, setUser } = useContext(UserContext);
@@ -27,6 +28,29 @@ const Home = () => {
     push("/home");
   };
 
+  useEffect(() => {
+    animate("#counter", {
+      translateY: 35,
+      duration: 3000,
+      alternate: true,
+      ease: "outBounce",
+    });
+
+    animate("#counter-label", {
+      translateY: -35,
+      duration: 3000,
+      alternate: true,
+      ease: "outBounce",
+    });
+
+    animate("#svg", {
+      translateX: [-10, 0],
+      scale: [1, 1.1, 1],
+      duration: 500,
+      easing: "easeOutElastic(1, .6)",
+    });
+  }, []);
+
   return (
     <>
       <Container>
@@ -47,6 +71,7 @@ const Home = () => {
             >
               {selectedUser ? "Salvar" : "Sair"}
               <FiLogOut
+                id="svg"
                 size={19}
                 color={selectedUser ? "#5CBC29" : "#D03434"}
               />
@@ -92,26 +117,30 @@ const Home = () => {
               !selectedUser ? push("/followers") : null;
             }}
           >
-            <h2>{selectedUser ? selectedUser.followers : user.followers}</h2>
-            <span>Seguidores</span>
+            <h2 id="counter">
+              {selectedUser ? selectedUser.followers : user.followers}
+            </h2>
+            <span id="counter-label">Seguidores</span>
           </div>
           <div
             onClick={() => {
               !selectedUser ? push("/following") : null;
             }}
           >
-            <h2>{selectedUser ? selectedUser.following : user.following}</h2>
-            <span>Seguindo</span>
+            <h2 id="counter">
+              {selectedUser ? selectedUser.following : user.following}
+            </h2>
+            <span id="counter-label">Seguindo</span>
           </div>
           <div
             onClick={() => {
               !selectedUser ? push("/repositories") : null;
             }}
           >
-            <h2>
+            <h2 id="counter">
               {selectedUser ? selectedUser.public_repos : user.public_repos}
             </h2>
-            <span>Repos</span>
+            <span id="counter-label">Repos</span>
           </div>
         </Infos>
         <Bio>

@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { colors } from '../../constants/colors';
-import { ContainerLogin } from '../Login/styles';
+import styled from "styled-components";
+import { colors } from "../../constants/colors";
+import { ContainerLogin } from "../Login/styles";
 
 export const Container = styled(ContainerLogin)`
   height: 100vh;
@@ -9,7 +9,7 @@ export const Container = styled(ContainerLogin)`
   overflow-y: auto;
   padding-bottom: 80px;
 
-  .notFound{
+  .notFound {
     width: 100%;
     margin-top: 15px;
     display: flex;
@@ -18,58 +18,59 @@ export const Container = styled(ContainerLogin)`
 `;
 
 export const Header = styled.header`
-    background: #1F1F1F;
-    height: 126px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 15px;
+  background: #1f1f1f;
+  height: 126px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15px;
 
-    nav{
-      width: 90%;
-      display: grid;
-      grid-template-areas: 'arrow name button';
+  nav {
+    width: 90%;
+    display: grid;
+    grid-template-areas: "arrow name button";
+    font-size: 17px;
+    line-height: 24px;
+
+    .goBack {
+      grid-area: arrow;
+      justify-self: flex-start;
+    }
+
+    div {
+      grid-area: name;
+      justify-self: flex-end;
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+    }
+    button {
+      grid-area: button;
+      justify-self: flex-end;
+      color: ${colors.white};
       font-size: 17px;
       line-height: 24px;
+      background: transparent;
+      border: none;
+      display: flex;
+      align-items: center;
 
-      .goBack{
-        grid-area: arrow;
-        justify-self: flex-start;
-      }
-
-      div{
-        grid-area: name;
-        justify-self: flex-end;
-        display: flex;
-        align-items: center;
-        font-weight: bold;
-      }
-      button{
-        grid-area: button;
-        justify-self: flex-end;
-        color: ${colors.white};
-        font-size: 17px;
-        line-height: 24px;
-        background: transparent;
-        border: none;
-        display: flex;
-        align-items: center;
-        svg{
-          margin-left: 12px;
-        }
+      svg {
+        margin-left: 12px;
       }
     }
-    .twoItems{
-        grid-template-areas: 'name button';
-        div{
-          justify-self: flex-start;
-        }
+  }
+  .twoItems {
+    grid-template-areas: "name button";
+    div {
+      justify-self: flex-start;
     }
+  }
 `;
 
 export const Infos = styled.div`
-  background: #5252525D;
+  background: #5252525d;
   height: 97px;
   width: 100%;
   color: ${colors.white};
@@ -79,79 +80,78 @@ export const Infos = styled.div`
   align-items: center;
   margin-top: 44px;
 
-  div{
+  div {
     width: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    h2{
+    h2 {
       font-size: 40px;
       line-height: 49px;
     }
-    span{
+    span {
       font-size: 17px;
       line-height: 24px;
     }
   }
-`
+`;
 
 export const About = styled.div`
-margin-top: 103px;
-width: 100%;
-padding: 0 18px;
-position: relative;
+  margin-top: 103px;
+  width: 100%;
+  padding: 0 18px;
+  position: relative;
 
-h3{
+  h3 {
     font-size: 26px;
     line-height: 32px;
-    &::before{
-    position: absolute;
-    left: 0;
-    top: -3px;
-    border-radius: 0 100px 100px 0;
-    content: '';
-    width: 10px;
-    height: 42px;
-    background: ${colors.yellow};
+    &::before {
+      position: absolute;
+      left: 0;
+      top: -3px;
+      border-radius: 0 100px 100px 0;
+      content: "";
+      width: 10px;
+      height: 42px;
+      background: ${colors.yellow};
     }
   }
 
-  p{
+  p {
     margin-top: 5px;
   }
-`
+`;
 
 export const Bio = styled.div`
   width: 100%;
   padding: 0 18px;
-  margin: 53px 0 15px 0 ;
+  margin: 53px 0 15px 0;
   position: relative;
-  h3{
+  h3 {
     font-size: 26px;
     line-height: 32px;
-    &::before{
-    position: absolute;
-    left: 0;
-    top: -3px;
-    border-radius: 0 100px 100px 0;
-    content: '';
-    width: 10px;
-    height: 42px;
-    background: ${colors.yellow};
+    &::before {
+      position: absolute;
+      left: 0;
+      top: -3px;
+      border-radius: 0 100px 100px 0;
+      content: "";
+      width: 10px;
+      height: 42px;
+      background: ${colors.yellow};
+    }
   }
-}
-  p{
+  p {
     font-size: 18px;
     line-height: 24px;
     margin-top: 14px;
   }
-`
-
+`;
 
 export const Avatar = styled.img`
   width: 115px;
   border: 3pt solid ${colors.white};
   border-radius: 100pt;
   margin-top: 30px;
-`
+`;
