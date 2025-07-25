@@ -90,3 +90,6 @@ As ferramentas usadas no desenvolvimento do projeto.
 - Yup
 - Formik
 - Material-UI
+
+Utilização para disciplina de Animações para web
+add animate css - atividade 3 - 5310ab67cdd2b9d28bc1257448cf1ad385b7322b
