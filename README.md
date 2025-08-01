@@ -94,3 +94,5 @@ As ferramentas usadas no desenvolvimento do projeto.
 Utilização para disciplina de Animações para web
 add animate css - atividade 3 - 5310ab67cdd2b9d28bc1257448cf1ad385b7322b
 add skeleton - Atividade 3 - 2c39f4b509e18fcfe303280f5aa2c7a8a34c5ced
+item 1 - tarefa 4 - c04486f7f115300e7038b79e33b847bb50359b04
+atividade 5 e 6 no arquivo tailwind-paralax
